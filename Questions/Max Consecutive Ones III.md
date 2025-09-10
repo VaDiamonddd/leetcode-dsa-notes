@@ -43,3 +43,4 @@ class Solution {
     }
 }
 ```
+Then I realized that I didn't update the `right` value after incrementing `left`.
