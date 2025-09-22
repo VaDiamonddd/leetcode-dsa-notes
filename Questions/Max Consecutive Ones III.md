@@ -43,7 +43,7 @@ class Solution {
     }
 }
 ```
-Then I realized that I didn't update the `right` value after incrementing `left`.
+Then I realized that I didn't update the `right` value after incrementing `left`.\
 So, my logic was not only wrong because I stopped adding ones after the last flippable zero was found, but it was also very inefficient O(n^2). Therefore, I decided to watch some videos about the solution. That's the final result:
 ```java
 class Solution {
