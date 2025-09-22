@@ -44,3 +44,28 @@ class Solution {
 }
 ```
 Then I realized that I didn't update the `right` value after incrementing `left`.
+So, my logic was not only wrong because I stopped adding ones after the last flippable zero was found, but it was also very inefficient O(n^2). Therefore, I decided to watch some videos about the solution. That's the final result:
+```java
+class Solution {
+    public int longestOnes(int[] nums, int k) {
+        int left = 0;
+        int zeroCount = 0;
+        int best = 0;
+        for (int right = 0; right < nums.length; right++){
+            if (nums[right] == 0){
+                zeroCount++;
+            }
+            
+            while (zeroCount > k){
+                if (nums[left] == 0){
+                    zeroCount--;
+                }
+                left++;
+            }
+            int current = right - left + 1;
+            best = Math.max(best, current);
+        }
+        return best;
+    }
+}
+```
